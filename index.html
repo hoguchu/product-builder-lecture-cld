@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="appTitle">Random Pick</title>
   <link href='/style.css' rel='stylesheet'>
+  <!-- TensorFlow.js and Teachable Machine -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
   <!-- Top Toolbar -->
@@ -17,6 +20,10 @@
       <button class="nav-btn" data-page="dinner" onclick="showPage('dinner')">
         <span class="nav-icon">&#127869;</span>
         <span class="nav-text" data-i18n="navDinner">Dinner</span>
+      </button>
+      <button class="nav-btn" data-page="animal" onclick="showPage('animal')">
+        <span class="nav-icon">&#128054;</span>
+        <span class="nav-text" data-i18n="navAnimal">Animal</span>
       </button>
     </nav>
     <div class="toolbar-right">
@@ -186,6 +193,54 @@
       <div class="dinner-card comments-card">
         <h3 data-i18n="commentsTitle">Comments</h3>
         <div id="disqus_thread"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animal Face Test Page -->
+  <div id="animalPage" class="page">
+    <div class="container">
+      <h1 data-i18n="animalHeading">Animal Face Test</h1>
+
+      <!-- Result Display -->
+      <div class="animal-card result-card">
+        <div class="animal-result" id="animalResult">
+          <div class="animal-icon-container">
+            <span class="animal-icon" id="animalIcon">&#129300;</span>
+          </div>
+          <span class="animal-result-text" id="animalResultText" data-i18n="animalPlaceholder">Upload your photo!</span>
+          <div class="animal-probability" id="animalProbability"></div>
+        </div>
+      </div>
+
+      <!-- Image Upload -->
+      <div class="animal-card upload-card">
+        <h3 data-i18n="uploadTitle">Upload Photo</h3>
+        <div class="upload-area" id="uploadArea" onclick="document.getElementById('imageInput').click()">
+          <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(event)" hidden>
+          <div class="upload-placeholder" id="uploadPlaceholder">
+            <span class="upload-icon">&#128247;</span>
+            <span class="upload-text" data-i18n="uploadText">Click to upload image</span>
+          </div>
+          <img id="previewImage" class="preview-image" alt="Preview">
+        </div>
+      </div>
+
+      <!-- Analyze Button -->
+      <button class="generate-btn animal-btn" onclick="analyzeImage()" id="analyzeBtn" disabled data-i18n="analyzeBtn">
+        Analyze My Face
+      </button>
+
+      <!-- Loading -->
+      <div class="loading-container" id="loadingContainer">
+        <div class="loading-spinner"></div>
+        <span data-i18n="analyzing">Analyzing...</span>
+      </div>
+
+      <!-- Description -->
+      <div class="animal-card description-card">
+        <h3 data-i18n="howItWorks">How It Works</h3>
+        <p data-i18n="animalDescription">This AI analyzes your photo to determine if you have more dog-like or cat-like features. Upload a clear face photo for best results!</p>
       </div>
     </div>
   </div>

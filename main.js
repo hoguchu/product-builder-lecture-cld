@@ -4,6 +4,7 @@ const translations = {
     appTitle: '랜덤 픽',
     navLottery: '로또',
     navDinner: '저녁메뉴',
+    navAnimal: '동물상',
     lotteryHeading: '로또 번호 생성기',
     lotto645Info: '6개 번호 (1-45)',
     megaInfo: '5개 번호 (1-70) + 메가볼 (1-25)',
@@ -34,12 +35,25 @@ const translations = {
     formMessagePlaceholder: '문의 내용을 입력하세요',
     formSubmit: '문의하기',
     formNotice: '영업일 기준 2-3일 내 회신드립니다.',
-    commentsTitle: '댓글'
+    commentsTitle: '댓글',
+    animalHeading: '동물상 테스트',
+    animalPlaceholder: '사진을 업로드하세요!',
+    uploadTitle: '사진 업로드',
+    uploadText: '클릭하여 이미지 업로드',
+    analyzeBtn: '내 얼굴 분석하기',
+    analyzing: '분석 중...',
+    howItWorks: '이용 방법',
+    animalDescription: 'AI가 당신의 사진을 분석하여 강아지상인지 고양이상인지 판별합니다. 정확한 결과를 위해 얼굴이 잘 보이는 사진을 업로드해주세요!',
+    dogFace: '강아지상',
+    catFace: '고양이상',
+    dogLabel: '강아지',
+    catLabel: '고양이'
   },
   en: {
     appTitle: 'Random Pick',
     navLottery: 'Lottery',
     navDinner: 'Dinner',
+    navAnimal: 'Animal',
     lotteryHeading: 'Lottery Number Generator',
     lotto645Info: '6 numbers (1-45)',
     megaInfo: '5 numbers (1-70) + Mega Ball (1-25)',
@@ -70,7 +84,19 @@ const translations = {
     formMessagePlaceholder: 'Enter your message',
     formSubmit: 'Send Inquiry',
     formNotice: "We'll get back to you within 2-3 business days.",
-    commentsTitle: 'Comments'
+    commentsTitle: 'Comments',
+    animalHeading: 'Animal Face Test',
+    animalPlaceholder: 'Upload your photo!',
+    uploadTitle: 'Upload Photo',
+    uploadText: 'Click to upload image',
+    analyzeBtn: 'Analyze My Face',
+    analyzing: 'Analyzing...',
+    howItWorks: 'How It Works',
+    animalDescription: 'This AI analyzes your photo to determine if you have more dog-like or cat-like features. Upload a clear face photo for best results!',
+    dogFace: 'Dog Face',
+    catFace: 'Cat Face',
+    dogLabel: 'Dog',
+    catLabel: 'Cat'
   }
 };
 
@@ -417,6 +443,162 @@ function loadHistory() {
     dinnerHistory = JSON.parse(saved);
     renderHistory();
   }
+}
+
+// ==================== Animal Face Test Functions ====================
+const ANIMAL_MODEL_URL = "https://teachablemachine.withgoogle.com/models/n0owLZW-x/";
+let animalModel = null;
+let uploadedImage = null;
+
+async function loadAnimalModel() {
+  if (animalModel) return animalModel;
+
+  try {
+    const modelURL = ANIMAL_MODEL_URL + "model.json";
+    const metadataURL = ANIMAL_MODEL_URL + "metadata.json";
+    animalModel = await tmImage.load(modelURL, metadataURL);
+    return animalModel;
+  } catch (error) {
+    console.error("Failed to load model:", error);
+    return null;
+  }
+}
+
+function handleImageUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const previewImage = document.getElementById('previewImage');
+    const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+    const uploadArea = document.getElementById('uploadArea');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+
+    previewImage.src = e.target.result;
+    previewImage.classList.add('visible');
+    uploadPlaceholder.style.display = 'none';
+    uploadArea.classList.add('has-image');
+    analyzeBtn.disabled = false;
+
+    uploadedImage = previewImage;
+  };
+  reader.readAsDataURL(file);
+}
+
+async function analyzeImage() {
+  if (!uploadedImage) return;
+
+  const loadingContainer = document.getElementById('loadingContainer');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+
+  // Show loading
+  loadingContainer.classList.add('visible');
+  analyzeBtn.disabled = true;
+
+  try {
+    // Load model if not loaded
+    const model = await loadAnimalModel();
+    if (!model) {
+      alert('Failed to load AI model. Please try again.');
+      return;
+    }
+
+    // Predict
+    const predictions = await model.predict(uploadedImage);
+
+    // Find results
+    let dogProb = 0;
+    let catProb = 0;
+
+    predictions.forEach(pred => {
+      const className = pred.className.toLowerCase();
+      if (className.includes('dog') || className.includes('강아지')) {
+        dogProb = pred.probability;
+      } else if (className.includes('cat') || className.includes('고양이')) {
+        catProb = pred.probability;
+      }
+    });
+
+    // Display results
+    displayAnimalResult(dogProb, catProb);
+
+  } catch (error) {
+    console.error("Analysis failed:", error);
+    alert('Analysis failed. Please try again.');
+  } finally {
+    loadingContainer.classList.remove('visible');
+    analyzeBtn.disabled = false;
+  }
+}
+
+function displayAnimalResult(dogProb, catProb) {
+  const resultText = document.getElementById('animalResultText');
+  const animalIcon = document.getElementById('animalIcon');
+  const probabilityContainer = document.getElementById('animalProbability');
+  const iconContainer = document.querySelector('.animal-icon-container');
+
+  const isDog = dogProb > catProb;
+  const resultLabel = isDog
+    ? translations[currentLang].dogFace
+    : translations[currentLang].catFace;
+
+  // Update result text
+  resultText.textContent = resultLabel;
+  resultText.className = 'animal-result-text ' + (isDog ? 'dog' : 'cat');
+
+  // Update icon
+  animalIcon.textContent = isDog ? '🐶' : '🐱';
+  iconContainer.style.background = isDog
+    ? 'linear-gradient(135deg, #fed7aa, #fdba74)'
+    : 'linear-gradient(135deg, #e9d5ff, #d8b4fe)';
+
+  // Update probability bars
+  const dogPercent = Math.round(dogProb * 100);
+  const catPercent = Math.round(catProb * 100);
+
+  probabilityContainer.innerHTML = `
+    <div class="prob-item">
+      <span class="prob-label">${translations[currentLang].dogLabel} 🐶</span>
+      <div class="prob-bar">
+        <div class="prob-fill dog" style="width: ${dogPercent}%"></div>
+      </div>
+      <span class="prob-value">${dogPercent}%</span>
+    </div>
+    <div class="prob-item">
+      <span class="prob-label">${translations[currentLang].catLabel} 🐱</span>
+      <div class="prob-bar">
+        <div class="prob-fill cat" style="width: ${catPercent}%"></div>
+      </div>
+      <span class="prob-value">${catPercent}%</span>
+    </div>
+  `;
+}
+
+function resetAnimalTest() {
+  const previewImage = document.getElementById('previewImage');
+  const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+  const uploadArea = document.getElementById('uploadArea');
+  const analyzeBtn = document.getElementById('analyzeBtn');
+  const resultText = document.getElementById('animalResultText');
+  const animalIcon = document.getElementById('animalIcon');
+  const probabilityContainer = document.getElementById('animalProbability');
+  const iconContainer = document.querySelector('.animal-icon-container');
+
+  previewImage.src = '';
+  previewImage.classList.remove('visible');
+  uploadPlaceholder.style.display = 'flex';
+  uploadArea.classList.remove('has-image');
+  analyzeBtn.disabled = true;
+
+  resultText.textContent = translations[currentLang].animalPlaceholder;
+  resultText.className = 'animal-result-text';
+  animalIcon.textContent = '🤔';
+  iconContainer.style.background = 'linear-gradient(135deg, #fef3c7, #fde68a)';
+  probabilityContainer.innerHTML = '';
+
+  uploadedImage = null;
+  document.getElementById('imageInput').value = '';
 }
 
 // ==================== Initialize ====================
