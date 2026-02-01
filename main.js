@@ -22,7 +22,18 @@ const translations = {
     pickDinner: '랜덤 메뉴 뽑기',
     historyTitle: '최근 기록',
     historyEmpty: '아직 기록이 없습니다',
-    clearHistory: '기록 지우기'
+    clearHistory: '기록 지우기',
+    contactTitle: '제휴 문의',
+    formName: '이름',
+    formNamePlaceholder: '이름을 입력하세요',
+    formEmail: '이메일',
+    formEmailPlaceholder: '이메일을 입력하세요',
+    formCompany: '회사명',
+    formCompanyPlaceholder: '회사명을 입력하세요',
+    formMessage: '문의 내용',
+    formMessagePlaceholder: '문의 내용을 입력하세요',
+    formSubmit: '문의하기',
+    formNotice: '영업일 기준 2-3일 내 회신드립니다.'
   },
   en: {
     appTitle: 'Random Pick',
@@ -46,7 +57,18 @@ const translations = {
     pickDinner: 'Pick Random Menu',
     historyTitle: 'Recent Picks',
     historyEmpty: 'No picks yet',
-    clearHistory: 'Clear History'
+    clearHistory: 'Clear History',
+    contactTitle: 'Partnership Inquiry',
+    formName: 'Name',
+    formNamePlaceholder: 'Enter your name',
+    formEmail: 'Email',
+    formEmailPlaceholder: 'Enter your email',
+    formCompany: 'Company',
+    formCompanyPlaceholder: 'Enter your company name',
+    formMessage: 'Message',
+    formMessagePlaceholder: 'Enter your message',
+    formSubmit: 'Send Inquiry',
+    formNotice: "We'll get back to you within 2-3 business days."
   }
 };
 
@@ -167,6 +189,15 @@ function applyLanguage() {
       } else {
         el.textContent = translations[currentLang][key];
       }
+    }
+  });
+
+  // Translate placeholders
+  const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+  placeholderElements.forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[currentLang][key]) {
+      el.placeholder = translations[currentLang][key];
     }
   });
 

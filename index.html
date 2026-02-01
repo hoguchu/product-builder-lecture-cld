@@ -156,6 +156,31 @@
         </div>
         <button class="clear-btn" onclick="clearHistory()" data-i18n="clearHistory">Clear History</button>
       </div>
+
+      <!-- Partnership Contact Form -->
+      <div class="dinner-card contact-card">
+        <h3 data-i18n="contactTitle">Partnership Inquiry</h3>
+        <form action="https://formspree.io/f/mzdgkkov" method="POST" class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name" data-i18n="formName">Name</label>
+            <input type="text" id="name" name="name" required data-i18n-placeholder="formNamePlaceholder" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="formEmail">Email</label>
+            <input type="email" id="email" name="email" required data-i18n-placeholder="formEmailPlaceholder" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="company" data-i18n="formCompany">Company</label>
+            <input type="text" id="company" name="company" data-i18n-placeholder="formCompanyPlaceholder" placeholder="Enter your company name">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="formMessage">Message</label>
+            <textarea id="message" name="message" rows="4" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Enter your message"></textarea>
+          </div>
+          <button type="submit" class="generate-btn contact-btn" data-i18n="formSubmit">Send Inquiry</button>
+        </form>
+        <p class="form-notice" data-i18n="formNotice">We'll get back to you within 2-3 business days.</p>
+      </div>
     </div>
   </div>
 

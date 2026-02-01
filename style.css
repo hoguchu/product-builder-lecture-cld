@@ -429,6 +429,7 @@ h1 {
 .lotto-btn { background: linear-gradient(135deg, #00a651, #008c44); }
 .all-btn { background: linear-gradient(135deg, #6366f1, #4f46e5); margin-top: 10px; }
 .dinner-btn { background: linear-gradient(135deg, #f97316, #ea580c); }
+.contact-btn { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
 
 /* Animation */
 @keyframes bounce {
@@ -602,5 +603,77 @@ h1 {
 
   .nav-icon {
     font-size: 20px;
+  }
+}
+
+/* ==================== Contact Form ==================== */
+.contact-card {
+  margin-top: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-notice {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Form responsive */
+@media (max-width: 400px) {
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
   }
 }
