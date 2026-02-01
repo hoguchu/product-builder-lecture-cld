@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lottery Number Generator</title>
+  <title data-i18n="title">Lottery Number Generator</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
+  <!-- Top Toolbar -->
+  <div class="toolbar">
+    <button class="toolbar-btn lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">
+      <span class="lang-text">EN</span>
+    </button>
+    <button class="toolbar-btn theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="icon-sun">&#9728;</span>
+      <span class="icon-moon">&#9790;</span>
+    </button>
+  </div>
+
   <div class="container">
-    <div class="header">
-      <h1>Lottery Number Generator</h1>
-      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="icon-sun">&#9728;</span>
-        <span class="icon-moon">&#9790;</span>
-      </button>
-    </div>
+    <h1 data-i18n="heading">Lottery Number Generator</h1>
 
     <!-- Korea Lotto 645 -->
     <div class="lottery-card lotto645">
       <div class="lottery-header">
         <h2>Lotto 645</h2>
-        <span class="lottery-info">6 numbers (1-45)</span>
+        <span class="lottery-info" data-i18n="lotto645Info">6 numbers (1-45)</span>
       </div>
       <div class="numbers-container" id="lotto645Numbers">
         <div class="ball lotto">?</div>
@@ -30,7 +35,7 @@
         <div class="ball lotto">?</div>
         <div class="ball lotto">?</div>
       </div>
-      <button class="generate-btn lotto-btn" onclick="generateLotto645()">
+      <button class="generate-btn lotto-btn" onclick="generateLotto645()" data-i18n="generate">
         Generate Numbers
       </button>
     </div>
@@ -39,7 +44,7 @@
     <div class="lottery-card mega-millions">
       <div class="lottery-header">
         <h2>Mega Millions</h2>
-        <span class="lottery-info">5 numbers (1-70) + Mega Ball (1-25)</span>
+        <span class="lottery-info" data-i18n="megaInfo">5 numbers (1-70) + Mega Ball (1-25)</span>
       </div>
       <div class="numbers-container" id="megaNumbers">
         <div class="ball white">?</div>
@@ -49,7 +54,7 @@
         <div class="ball white">?</div>
         <div class="ball mega">?</div>
       </div>
-      <button class="generate-btn mega-btn" onclick="generateMegaMillions()">
+      <button class="generate-btn mega-btn" onclick="generateMegaMillions()" data-i18n="generate">
         Generate Numbers
       </button>
     </div>
@@ -58,7 +63,7 @@
     <div class="lottery-card powerball">
       <div class="lottery-header">
         <h2>Powerball</h2>
-        <span class="lottery-info">5 numbers (1-69) + Powerball (1-26)</span>
+        <span class="lottery-info" data-i18n="powerballInfo">5 numbers (1-69) + Powerball (1-26)</span>
       </div>
       <div class="numbers-container" id="powerballNumbers">
         <div class="ball white">?</div>
@@ -68,13 +73,13 @@
         <div class="ball white">?</div>
         <div class="ball power">?</div>
       </div>
-      <button class="generate-btn power-btn" onclick="generatePowerball()">
+      <button class="generate-btn power-btn" onclick="generatePowerball()" data-i18n="generate">
         Generate Numbers
       </button>
     </div>
 
     <!-- Generate All -->
-    <button class="generate-btn all-btn" onclick="generateAll()">
+    <button class="generate-btn all-btn" onclick="generateAll()" data-i18n="generateAll">
       Generate All
     </button>
   </div>

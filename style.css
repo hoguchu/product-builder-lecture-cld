@@ -13,6 +13,7 @@
   --card-shadow: rgba(0, 0, 0, 0.3);
   --info-text: #666;
   --toggle-bg: #374151;
+  --toolbar-bg: rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="light"] {
@@ -23,6 +24,7 @@
   --card-shadow: rgba(0, 0, 0, 0.15);
   --info-text: #64748b;
   --toggle-bg: #cbd5e1;
+  --toolbar-bg: rgba(255, 255, 255, 0.3);
 }
 
 body {
@@ -30,50 +32,72 @@ body {
   background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   min-height: 100vh;
   padding: 20px;
+  padding-top: 70px;
   transition: background 0.3s ease;
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.header {
+/* Top Toolbar */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--toolbar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  position: relative;
-  margin-bottom: 30px;
+  padding: 0 15px;
+  gap: 10px;
+  z-index: 1000;
+  transition: background 0.3s ease;
 }
 
-h1 {
-  text-align: center;
+.toolbar-btn {
+  height: 34px;
+  background: var(--toggle-bg);
+  border: none;
+  border-radius: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.toolbar-btn:hover {
+  transform: scale(1.05);
+}
+
+.toolbar-btn:active {
+  transform: scale(0.95);
+}
+
+/* Language Toggle */
+.lang-toggle {
+  width: 50px;
+  padding: 0 12px;
+}
+
+.lang-text {
+  font-size: 13px;
+  font-weight: bold;
   color: var(--text-primary);
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
-  position: absolute;
-  right: 0;
-  width: 50px;
-  height: 28px;
-  background: var(--toggle-bg);
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  width: 60px;
+  padding: 4px 8px;
   justify-content: space-between;
-  padding: 4px 6px;
-  transition: background 0.3s ease;
 }
 
 .theme-toggle .icon-sun,
 .theme-toggle .icon-moon {
-  font-size: 14px;
+  font-size: 16px;
   transition: opacity 0.3s ease;
 }
 
@@ -95,22 +119,40 @@ h1 {
   opacity: 0.4;
 }
 
+/* Container */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+  word-break: keep-all;
+}
+
+/* Lottery Card */
 .lottery-card {
   background: var(--card-bg);
   border-radius: 20px;
-  padding: 25px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin-bottom: 15px;
   box-shadow: 0 10px 30px var(--card-shadow);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lottery-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .lottery-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 5px;
 }
 
@@ -132,22 +174,24 @@ h1 {
   transition: color 0.3s ease;
 }
 
+/* Numbers Container */
 .numbers-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 15px;
   flex-wrap: wrap;
 }
 
+/* Ball Styles */
 .ball {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #333;
   box-shadow:
@@ -207,9 +251,10 @@ h1 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Generate Buttons */
 .generate-btn {
   width: 100%;
-  padding: 15px;
+  padding: 14px;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
@@ -255,15 +300,126 @@ h1 {
   animation: bounce 0.3s ease;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+    padding-top: 65px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .lottery-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .lottery-header h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive - Mobile */
 @media (max-width: 400px) {
-  .ball {
-    width: 42px;
-    height: 42px;
-    font-size: 1rem;
+  body {
+    padding: 10px;
+    padding-top: 60px;
+  }
+
+  .toolbar {
+    height: 45px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .toolbar-btn {
+    height: 30px;
+  }
+
+  .lang-toggle {
+    width: 44px;
+    padding: 0 10px;
+  }
+
+  .lang-text {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    width: 52px;
+    padding: 3px 6px;
+  }
+
+  .theme-toggle .icon-sun,
+  .theme-toggle .icon-moon {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .lottery-card {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+  }
+
+  .lottery-header {
+    margin-bottom: 12px;
+  }
+
+  .lottery-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .lottery-info {
+    font-size: 0.8rem;
   }
 
   .numbers-container {
-    gap: 8px;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .ball {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .generate-btn {
+    padding: 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .all-btn {
+    margin-top: 8px;
+  }
+}
+
+/* Responsive - Very Small */
+@media (max-width: 340px) {
+  .ball {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .numbers-container {
+    gap: 5px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
   }
 }
