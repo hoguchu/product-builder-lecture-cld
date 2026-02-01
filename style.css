@@ -4,11 +4,33 @@
   box-sizing: border-box;
 }
 
+/* Theme Variables */
+:root {
+  --bg-gradient-start: #1a1a2e;
+  --bg-gradient-end: #16213e;
+  --text-primary: #fff;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --info-text: #666;
+  --toggle-bg: #374151;
+}
+
+[data-theme="light"] {
+  --bg-gradient-start: #e0e7ff;
+  --bg-gradient-end: #c7d2fe;
+  --text-primary: #1e293b;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --card-shadow: rgba(0, 0, 0, 0.15);
+  --info-text: #64748b;
+  --toggle-bg: #cbd5e1;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   min-height: 100vh;
   padding: 20px;
+  transition: background 0.3s ease;
 }
 
 .container {
@@ -16,20 +38,70 @@ body {
   margin: 0 auto;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
 h1 {
   text-align: center;
-  color: #fff;
-  margin-bottom: 30px;
+  color: var(--text-primary);
   font-size: 1.8rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 28px;
+  background: var(--toggle-bg);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle .icon-sun {
+  opacity: 0.4;
+  color: #fbbf24;
+}
+
+.theme-toggle .icon-moon {
+  opacity: 1;
+  color: #f1f5f9;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  opacity: 1;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  opacity: 0.4;
 }
 
 .lottery-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 25px;
   margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lottery-header {
@@ -56,7 +128,8 @@ h1 {
 
 .lottery-info {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--info-text);
+  transition: color 0.3s ease;
 }
 
 .numbers-container {
