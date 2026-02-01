@@ -33,7 +33,8 @@ const translations = {
     formMessage: '문의 내용',
     formMessagePlaceholder: '문의 내용을 입력하세요',
     formSubmit: '문의하기',
-    formNotice: '영업일 기준 2-3일 내 회신드립니다.'
+    formNotice: '영업일 기준 2-3일 내 회신드립니다.',
+    commentsTitle: '댓글'
   },
   en: {
     appTitle: 'Random Pick',
@@ -68,7 +69,8 @@ const translations = {
     formMessage: 'Message',
     formMessagePlaceholder: 'Enter your message',
     formSubmit: 'Send Inquiry',
-    formNotice: "We'll get back to you within 2-3 business days."
+    formNotice: "We'll get back to you within 2-3 business days.",
+    commentsTitle: 'Comments'
   }
 };
 

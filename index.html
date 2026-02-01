@@ -181,9 +181,30 @@
         </form>
         <p class="form-notice" data-i18n="formNotice">We'll get back to you within 2-3 business days.</p>
       </div>
+
+      <!-- Disqus Comments -->
+      <div class="dinner-card comments-card">
+        <h3 data-i18n="commentsTitle">Comments</h3>
+        <div id="disqus_thread"></div>
+      </div>
     </div>
   </div>
 
   <script defer type="text/javascript" src="/main.js"></script>
+
+  <!-- Disqus -->
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = 'dinner-menu-picker';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://product-builder-cld.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>

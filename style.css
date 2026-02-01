@@ -677,3 +677,13 @@ h1 {
     font-size: 0.8rem;
   }
 }
+
+/* ==================== Disqus Comments ==================== */
+.comments-card {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#disqus_thread {
+  margin-top: 10px;
+}
