@@ -3,85 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="title">Lottery Number Generator</title>
+  <title data-i18n="appTitle">Random Pick</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
   <!-- Top Toolbar -->
   <div class="toolbar">
-    <button class="toolbar-btn lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">
-      <span class="lang-text">EN</span>
-    </button>
-    <button class="toolbar-btn theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      <span class="icon-sun">&#9728;</span>
-      <span class="icon-moon">&#9790;</span>
-    </button>
+    <nav class="nav-menu">
+      <button class="nav-btn active" data-page="lottery" onclick="showPage('lottery')">
+        <span class="nav-icon">&#127922;</span>
+        <span class="nav-text" data-i18n="navLottery">Lottery</span>
+      </button>
+      <button class="nav-btn" data-page="dinner" onclick="showPage('dinner')">
+        <span class="nav-icon">&#127869;</span>
+        <span class="nav-text" data-i18n="navDinner">Dinner</span>
+      </button>
+    </nav>
+    <div class="toolbar-right">
+      <button class="toolbar-btn lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Toggle language">
+        <span class="lang-text">EN</span>
+      </button>
+      <button class="toolbar-btn theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="icon-sun">&#9728;</span>
+        <span class="icon-moon">&#9790;</span>
+      </button>
+    </div>
   </div>
 
-  <div class="container">
-    <h1 data-i18n="heading">Lottery Number Generator</h1>
+  <!-- Lottery Page -->
+  <div id="lotteryPage" class="page active">
+    <div class="container">
+      <h1 data-i18n="lotteryHeading">Lottery Number Generator</h1>
 
-    <!-- Korea Lotto 645 -->
-    <div class="lottery-card lotto645">
-      <div class="lottery-header">
-        <h2>Lotto 645</h2>
-        <span class="lottery-info" data-i18n="lotto645Info">6 numbers (1-45)</span>
+      <!-- Korea Lotto 645 -->
+      <div class="lottery-card lotto645">
+        <div class="lottery-header">
+          <h2>Lotto 645</h2>
+          <span class="lottery-info" data-i18n="lotto645Info">6 numbers (1-45)</span>
+        </div>
+        <div class="numbers-container" id="lotto645Numbers">
+          <div class="ball lotto">?</div>
+          <div class="ball lotto">?</div>
+          <div class="ball lotto">?</div>
+          <div class="ball lotto">?</div>
+          <div class="ball lotto">?</div>
+          <div class="ball lotto">?</div>
+        </div>
+        <button class="generate-btn lotto-btn" onclick="generateLotto645()" data-i18n="generate">
+          Generate Numbers
+        </button>
       </div>
-      <div class="numbers-container" id="lotto645Numbers">
-        <div class="ball lotto">?</div>
-        <div class="ball lotto">?</div>
-        <div class="ball lotto">?</div>
-        <div class="ball lotto">?</div>
-        <div class="ball lotto">?</div>
-        <div class="ball lotto">?</div>
+
+      <!-- Mega Millions -->
+      <div class="lottery-card mega-millions">
+        <div class="lottery-header">
+          <h2>Mega Millions</h2>
+          <span class="lottery-info" data-i18n="megaInfo">5 numbers (1-70) + Mega Ball (1-25)</span>
+        </div>
+        <div class="numbers-container" id="megaNumbers">
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball mega">?</div>
+        </div>
+        <button class="generate-btn mega-btn" onclick="generateMegaMillions()" data-i18n="generate">
+          Generate Numbers
+        </button>
       </div>
-      <button class="generate-btn lotto-btn" onclick="generateLotto645()" data-i18n="generate">
-        Generate Numbers
+
+      <!-- Powerball -->
+      <div class="lottery-card powerball">
+        <div class="lottery-header">
+          <h2>Powerball</h2>
+          <span class="lottery-info" data-i18n="powerballInfo">5 numbers (1-69) + Powerball (1-26)</span>
+        </div>
+        <div class="numbers-container" id="powerballNumbers">
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball white">?</div>
+          <div class="ball power">?</div>
+        </div>
+        <button class="generate-btn power-btn" onclick="generatePowerball()" data-i18n="generate">
+          Generate Numbers
+        </button>
+      </div>
+
+      <!-- Generate All -->
+      <button class="generate-btn all-btn" onclick="generateAll()" data-i18n="generateAll">
+        Generate All
       </button>
     </div>
+  </div>
 
-    <!-- Mega Millions -->
-    <div class="lottery-card mega-millions">
-      <div class="lottery-header">
-        <h2>Mega Millions</h2>
-        <span class="lottery-info" data-i18n="megaInfo">5 numbers (1-70) + Mega Ball (1-25)</span>
+  <!-- Dinner Page -->
+  <div id="dinnerPage" class="page">
+    <div class="container">
+      <h1 data-i18n="dinnerHeading">Dinner Menu Picker</h1>
+
+      <!-- Result Display -->
+      <div class="dinner-card result-card">
+        <div class="dinner-result" id="dinnerResult">
+          <span class="result-icon">&#127869;</span>
+          <span class="result-text" data-i18n="dinnerPlaceholder">Pick your dinner!</span>
+        </div>
       </div>
-      <div class="numbers-container" id="megaNumbers">
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball mega">?</div>
+
+      <!-- Category Selection -->
+      <div class="dinner-card">
+        <h3 data-i18n="categoryTitle">Select Category</h3>
+        <div class="category-grid">
+          <button class="category-btn active" data-category="all" onclick="selectCategory('all')">
+            <span class="cat-icon">&#127860;</span>
+            <span data-i18n="catAll">All</span>
+          </button>
+          <button class="category-btn" data-category="korean" onclick="selectCategory('korean')">
+            <span class="cat-icon">&#127858;</span>
+            <span data-i18n="catKorean">Korean</span>
+          </button>
+          <button class="category-btn" data-category="chinese" onclick="selectCategory('chinese')">
+            <span class="cat-icon">&#129379;</span>
+            <span data-i18n="catChinese">Chinese</span>
+          </button>
+          <button class="category-btn" data-category="japanese" onclick="selectCategory('japanese')">
+            <span class="cat-icon">&#127843;</span>
+            <span data-i18n="catJapanese">Japanese</span>
+          </button>
+          <button class="category-btn" data-category="western" onclick="selectCategory('western')">
+            <span class="cat-icon">&#127829;</span>
+            <span data-i18n="catWestern">Western</span>
+          </button>
+          <button class="category-btn" data-category="asian" onclick="selectCategory('asian')">
+            <span class="cat-icon">&#127836;</span>
+            <span data-i18n="catAsian">Asian</span>
+          </button>
+        </div>
       </div>
-      <button class="generate-btn mega-btn" onclick="generateMegaMillions()" data-i18n="generate">
-        Generate Numbers
+
+      <!-- Pick Button -->
+      <button class="generate-btn dinner-btn" onclick="pickDinner()" data-i18n="pickDinner">
+        Pick Random Menu
       </button>
-    </div>
 
-    <!-- Powerball -->
-    <div class="lottery-card powerball">
-      <div class="lottery-header">
-        <h2>Powerball</h2>
-        <span class="lottery-info" data-i18n="powerballInfo">5 numbers (1-69) + Powerball (1-26)</span>
+      <!-- History -->
+      <div class="dinner-card history-card">
+        <h3 data-i18n="historyTitle">Recent Picks</h3>
+        <div class="history-list" id="historyList">
+          <p class="history-empty" data-i18n="historyEmpty">No picks yet</p>
+        </div>
+        <button class="clear-btn" onclick="clearHistory()" data-i18n="clearHistory">Clear History</button>
       </div>
-      <div class="numbers-container" id="powerballNumbers">
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball white">?</div>
-        <div class="ball power">?</div>
-      </div>
-      <button class="generate-btn power-btn" onclick="generatePowerball()" data-i18n="generate">
-        Generate Numbers
-      </button>
     </div>
-
-    <!-- Generate All -->
-    <button class="generate-btn all-btn" onclick="generateAll()" data-i18n="generateAll">
-      Generate All
-    </button>
   </div>
 
   <script defer type="text/javascript" src="/main.js"></script>
