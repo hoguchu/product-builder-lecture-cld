@@ -1,14 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>US Lottery Number Generator</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <h1>US Lottery Number Generator</h1>
+
+    <!-- Mega Millions -->
+    <div class="lottery-card mega-millions">
+      <div class="lottery-header">
+        <h2>Mega Millions</h2>
+        <span class="lottery-info">5 numbers (1-70) + Mega Ball (1-25)</span>
+      </div>
+      <div class="numbers-container" id="megaNumbers">
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball mega">?</div>
+      </div>
+      <button class="generate-btn mega-btn" onclick="generateMegaMillions()">
+        Generate Numbers
+      </button>
+    </div>
+
+    <!-- Powerball -->
+    <div class="lottery-card powerball">
+      <div class="lottery-header">
+        <h2>Powerball</h2>
+        <span class="lottery-info">5 numbers (1-69) + Powerball (1-26)</span>
+      </div>
+      <div class="numbers-container" id="powerballNumbers">
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball white">?</div>
+        <div class="ball power">?</div>
+      </div>
+      <button class="generate-btn power-btn" onclick="generatePowerball()">
+        Generate Numbers
+      </button>
+    </div>
+
+    <!-- Generate Both -->
+    <button class="generate-btn both-btn" onclick="generateBoth()">
+      Generate Both
+    </button>
+  </div>
+
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>

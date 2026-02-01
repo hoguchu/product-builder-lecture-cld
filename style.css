@@ -1,1 +1,158 @@
-/* Add styles here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lottery-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.lottery-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lottery-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.mega-millions .lottery-header h2 {
+  color: #c9a227;
+}
+
+.powerball .lottery-header h2 {
+  color: #e31837;
+}
+
+.lottery-info {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.numbers-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  box-shadow:
+    inset 0 -5px 10px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ball:hover {
+  transform: scale(1.1);
+}
+
+.ball.white {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: 2px solid #ccc;
+}
+
+.ball.mega {
+  background: linear-gradient(145deg, #ffd700, #c9a227);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ball.power {
+  background: linear-gradient(145deg, #ff4d4d, #e31837);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.mega-btn {
+  background: linear-gradient(135deg, #c9a227, #a88419);
+}
+
+.power-btn {
+  background: linear-gradient(135deg, #e31837, #b8142c);
+}
+
+.both-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  margin-top: 10px;
+}
+
+/* Animation for number generation */
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.ball.animate {
+  animation: bounce 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .ball {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .numbers-container {
+    gap: 8px;
+  }
+}
