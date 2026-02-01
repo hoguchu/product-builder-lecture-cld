@@ -42,6 +42,10 @@ h1 {
   margin-bottom: 5px;
 }
 
+.lotto645 .lottery-header h2 {
+  color: #00a651;
+}
+
 .mega-millions .lottery-header h2 {
   color: #c9a227;
 }
@@ -88,6 +92,36 @@ h1 {
   border: 2px solid #ccc;
 }
 
+/* Lotto 645 color balls */
+.ball.lotto-yellow {
+  background: linear-gradient(145deg, #ffd700, #e6c200);
+  color: #333;
+}
+
+.ball.lotto-blue {
+  background: linear-gradient(145deg, #4da6ff, #0080ff);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ball.lotto-red {
+  background: linear-gradient(145deg, #ff6b6b, #e63946);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ball.lotto-gray {
+  background: linear-gradient(145deg, #9e9e9e, #757575);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ball.lotto-green {
+  background: linear-gradient(145deg, #4caf50, #388e3c);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 .ball.mega {
   background: linear-gradient(145deg, #ffd700, #c9a227);
   color: #fff;
@@ -129,7 +163,11 @@ h1 {
   background: linear-gradient(135deg, #e31837, #b8142c);
 }
 
-.both-btn {
+.lotto-btn {
+  background: linear-gradient(135deg, #00a651, #008c44);
+}
+
+.all-btn {
   background: linear-gradient(135deg, #6366f1, #4f46e5);
   margin-top: 10px;
 }

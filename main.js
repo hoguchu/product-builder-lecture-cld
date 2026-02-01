@@ -49,8 +49,35 @@ function generatePowerball() {
   updateBalls('powerballNumbers', whiteNumbers, powerball, 'power');
 }
 
-// Generate both lottery numbers
-function generateBoth() {
+// Generate Korea Lotto 645 numbers
+// 6 balls: 1-45
+function generateLotto645() {
+  const numbers = getRandomNumbers(6, 1, 45);
+  const container = document.getElementById('lotto645Numbers');
+  const balls = container.querySelectorAll('.ball');
+
+  numbers.forEach((num, index) => {
+    const ball = balls[index];
+    ball.textContent = num;
+    // Set color based on number range
+    ball.className = 'ball lotto ' + getLottoColorClass(num);
+    ball.classList.add('animate');
+    setTimeout(() => ball.classList.remove('animate'), 300);
+  });
+}
+
+// Get color class for Lotto 645 based on number range
+function getLottoColorClass(num) {
+  if (num <= 10) return 'lotto-yellow';
+  if (num <= 20) return 'lotto-blue';
+  if (num <= 30) return 'lotto-red';
+  if (num <= 40) return 'lotto-gray';
+  return 'lotto-green';
+}
+
+// Generate all lottery numbers
+function generateAll() {
+  generateLotto645();
   generateMegaMillions();
   generatePowerball();
 }

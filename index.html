@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>US Lottery Number Generator</title>
+  <title>Lottery Number Generator</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
   <div class="container">
-    <h1>US Lottery Number Generator</h1>
+    <h1>Lottery Number Generator</h1>
+
+    <!-- Korea Lotto 645 -->
+    <div class="lottery-card lotto645">
+      <div class="lottery-header">
+        <h2>Lotto 645</h2>
+        <span class="lottery-info">6 numbers (1-45)</span>
+      </div>
+      <div class="numbers-container" id="lotto645Numbers">
+        <div class="ball lotto">?</div>
+        <div class="ball lotto">?</div>
+        <div class="ball lotto">?</div>
+        <div class="ball lotto">?</div>
+        <div class="ball lotto">?</div>
+        <div class="ball lotto">?</div>
+      </div>
+      <button class="generate-btn lotto-btn" onclick="generateLotto645()">
+        Generate Numbers
+      </button>
+    </div>
 
     <!-- Mega Millions -->
     <div class="lottery-card mega-millions">
@@ -48,9 +67,9 @@
       </button>
     </div>
 
-    <!-- Generate Both -->
-    <button class="generate-btn both-btn" onclick="generateBoth()">
-      Generate Both
+    <!-- Generate All -->
+    <button class="generate-btn all-btn" onclick="generateAll()">
+      Generate All
     </button>
   </div>
 
