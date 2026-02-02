@@ -6,8 +6,8 @@
   <meta name="google-adsense-account" content="ca-pub-6158863961903894">
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트를 제공하는 랜덤 픽 서비스입니다. Free lottery number generator, dinner menu picker, and AI animal face test.">
-  <meta name="keywords" content="로또, 번호 생성기, 저녁 메뉴, 메뉴 추천, 동물상 테스트, lottery, random picker, dinner menu, AI test">
+  <meta name="description" content="무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트, AI 인사이트 블로그를 제공하는 랜덤 픽 서비스입니다. Free lottery number generator, dinner menu picker, AI animal face test, and AI insights blog.">
+  <meta name="keywords" content="로또, 번호 생성기, 저녁 메뉴, 메뉴 추천, 동물상 테스트, AI 블로그, 인공지능, ChatGPT, 머신러닝, lottery, random picker, dinner menu, AI test, AI blog, artificial intelligence">
   <meta name="author" content="Random Pick">
   <meta name="robots" content="index, follow">
 
@@ -49,6 +49,10 @@
       <button class="nav-btn" data-page="animal" onclick="showPage('animal')">
         <span class="nav-icon">&#128054;</span>
         <span class="nav-text" data-i18n="navAnimal">Animal</span>
+      </button>
+      <button class="nav-btn" data-page="blog" onclick="showPage('blog')">
+        <span class="nav-icon">&#128214;</span>
+        <span class="nav-text" data-i18n="navBlog">Blog</span>
       </button>
       <button class="nav-btn" data-page="about" onclick="showPage('about')">
         <span class="nav-icon">&#9432;</span>
@@ -271,6 +275,169 @@
         <h3 data-i18n="howItWorks">How It Works</h3>
         <p data-i18n="animalDescription">This AI analyzes your photo to determine if you have more dog-like or cat-like features. Upload a clear face photo for best results!</p>
       </div>
+    </div>
+  </div>
+
+  <!-- Blog Page -->
+  <div id="blogPage" class="page">
+    <div class="container blog-container">
+      <h1 data-i18n="blogHeading">AI Insights Blog</h1>
+      <p class="blog-intro" data-i18n="blogIntro">Explore the latest trends, guides, and insights about Artificial Intelligence and how it's transforming our world.</p>
+
+      <!-- Blog Posts Grid -->
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- Blog Post 1 -->
+        <article class="blog-card" onclick="openBlogPost(1)">
+          <div class="blog-card-icon">&#129302;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catBasics">Basics</span>
+            <h3 data-i18n="blog1Title">What is Artificial Intelligence?</h3>
+            <p data-i18n="blog1Summary">A comprehensive introduction to AI, its history, and how it works in simple terms.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-card" onclick="openBlogPost(2)">
+          <div class="blog-card-icon">&#129504;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catTechnology">Technology</span>
+            <h3 data-i18n="blog2Title">Machine Learning vs Deep Learning</h3>
+            <p data-i18n="blog2Summary">Understanding the key differences between these two fundamental AI concepts.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-card" onclick="openBlogPost(3)">
+          <div class="blog-card-icon">&#128172;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catTrends">Trends</span>
+            <h3 data-i18n="blog3Title">ChatGPT and Conversational AI</h3>
+            <p data-i18n="blog3Summary">How large language models are revolutionizing human-computer interaction.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 4 -->
+        <article class="blog-card" onclick="openBlogPost(4)">
+          <div class="blog-card-icon">&#127968;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catLifestyle">Lifestyle</span>
+            <h3 data-i18n="blog4Title">AI in Daily Life</h3>
+            <p data-i18n="blog4Summary">Discover how AI is already integrated into your everyday activities and devices.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 5 -->
+        <article class="blog-card" onclick="openBlogPost(5)">
+          <div class="blog-card-icon">&#127912;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catCreative">Creative</span>
+            <h3 data-i18n="blog5Title">AI Image Generation Tools</h3>
+            <p data-i18n="blog5Summary">Compare DALL-E, Midjourney, and Stable Diffusion for creating stunning visuals.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 6 -->
+        <article class="blog-card" onclick="openBlogPost(6)">
+          <div class="blog-card-icon">&#9878;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catEthics">Ethics</span>
+            <h3 data-i18n="blog6Title">AI Ethics and Responsibility</h3>
+            <p data-i18n="blog6Summary">Important considerations for the ethical development and use of AI systems.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 7 -->
+        <article class="blog-card" onclick="openBlogPost(7)">
+          <div class="blog-card-icon">&#128161;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catGuide">Guide</span>
+            <h3 data-i18n="blog7Title">Prompt Engineering Mastery</h3>
+            <p data-i18n="blog7Summary">Learn how to write effective prompts to get the best results from AI tools.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 8 -->
+        <article class="blog-card" onclick="openBlogPost(8)">
+          <div class="blog-card-icon">&#128187;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catDevelopment">Development</span>
+            <h3 data-i18n="blog8Title">AI Coding Assistants</h3>
+            <p data-i18n="blog8Summary">How GitHub Copilot and other AI tools are transforming software development.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 9 -->
+        <article class="blog-card" onclick="openBlogPost(9)">
+          <div class="blog-card-icon">&#127908;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catTechnology">Technology</span>
+            <h3 data-i18n="blog9Title">AI Voice Recognition</h3>
+            <p data-i18n="blog9Summary">The evolution and future of voice-controlled AI assistants and speech recognition.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 10 -->
+        <article class="blog-card" onclick="openBlogPost(10)">
+          <div class="blog-card-icon">&#127928;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catCreative">Creative</span>
+            <h3 data-i18n="blog10Title">AI and Creative Arts</h3>
+            <p data-i18n="blog10Summary">Exploring AI's role in art, music composition, and creative writing.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 11 -->
+        <article class="blog-card" onclick="openBlogPost(11)">
+          <div class="blog-card-icon">&#128218;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catLearning">Learning</span>
+            <h3 data-i18n="blog11Title">AI Learning Resources</h3>
+            <p data-i18n="blog11Summary">Best courses, books, and resources for beginners to start learning AI.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+        <!-- Blog Post 12 -->
+        <article class="blog-card" onclick="openBlogPost(12)">
+          <div class="blog-card-icon">&#128640;</div>
+          <div class="blog-card-content">
+            <span class="blog-category" data-i18n="catTrends">Trends</span>
+            <h3 data-i18n="blog12Title">AI Trends in 2024</h3>
+            <p data-i18n="blog12Summary">Key technologies and developments shaping the future of artificial intelligence.</p>
+            <span class="blog-read-more" data-i18n="readMore">Read More</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Blog Post Detail Modal -->
+      <div class="blog-modal" id="blogModal">
+        <div class="blog-modal-content">
+          <button class="blog-modal-close" onclick="closeBlogPost()">&times;</button>
+          <div class="blog-modal-header">
+            <span class="blog-modal-icon" id="modalIcon"></span>
+            <span class="blog-modal-category" id="modalCategory"></span>
+          </div>
+          <h2 class="blog-modal-title" id="modalTitle"></h2>
+          <div class="blog-modal-body" id="modalBody"></div>
+          <div class="blog-modal-footer">
+            <button class="blog-nav-btn" onclick="navigateBlog(-1)" data-i18n="prevPost">Previous</button>
+            <button class="blog-nav-btn" onclick="navigateBlog(1)" data-i18n="nextPost">Next</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
