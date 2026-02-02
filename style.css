@@ -10,22 +10,22 @@
   --bg-gradient-end: #16213e;
   --text-primary: #fff;
   --text-secondary: #a0aec0;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-shadow: rgba(0, 0, 0, 0.3);
-  --info-text: #666;
+  --card-bg: rgba(30, 41, 59, 0.95);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --info-text: #94a3b8;
   --toggle-bg: #374151;
   --toolbar-bg: rgba(0, 0, 0, 0.3);
   --nav-active: rgba(255, 255, 255, 0.2);
   --nav-hover: rgba(255, 255, 255, 0.1);
-  /* Card inner text colors (cards have light bg in both modes) */
-  --card-text-primary: #1e293b;
-  --card-text-secondary: #475569;
-  --card-text-muted: #64748b;
-  --card-heading: #4f46e5;
-  --card-border: #e2e8f0;
-  --card-inner-bg: #f1f5f9;
-  --card-inner-bg-hover: #e2e8f0;
-  --card-inner-bg-active: #e0e7ff;
+  /* Card inner text colors for dark mode */
+  --card-text-primary: #f1f5f9;
+  --card-text-secondary: #cbd5e1;
+  --card-text-muted: #94a3b8;
+  --card-heading: #a5b4fc;
+  --card-border: #475569;
+  --card-inner-bg: rgba(51, 65, 85, 0.8);
+  --card-inner-bg-hover: rgba(71, 85, 105, 0.8);
+  --card-inner-bg-active: rgba(99, 102, 241, 0.3);
 }
 
 [data-theme="light"] {
@@ -40,7 +40,7 @@
   --toolbar-bg: rgba(255, 255, 255, 0.5);
   --nav-active: rgba(99, 102, 241, 0.2);
   --nav-hover: rgba(99, 102, 241, 0.1);
-  /* Card inner text colors */
+  /* Card inner text colors for light mode */
   --card-text-primary: #1e293b;
   --card-text-secondary: #475569;
   --card-text-muted: #64748b;
@@ -263,7 +263,7 @@ h1 {
   justify-content: center;
   font-size: 1.1rem;
   font-weight: bold;
-  color: var(--card-text-primary);
+  color: #333;
   box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
@@ -656,7 +656,7 @@ h1 {
   font-size: 0.95rem;
   font-family: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  background: #fff;
+  background: var(--card-inner-bg);
   color: var(--card-text-primary);
 }
 
@@ -669,7 +669,7 @@ h1 {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #94a3b8;
+  color: var(--card-text-muted);
 }
 
 .form-group textarea {
@@ -1034,7 +1034,7 @@ h1 {
 }
 
 .legal-links a:hover {
-  background: #c7d2fe;
+  background: var(--card-inner-bg-hover);
   transform: translateY(-2px);
 }
 
