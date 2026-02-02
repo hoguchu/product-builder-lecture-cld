@@ -929,3 +929,267 @@ h1 {
     width: 80px;
   }
 }
+
+/* ==================== About Page ==================== */
+.about-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card h3 {
+  color: #4f46e5;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.about-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.feature-content h4 {
+  color: #1e293b;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.feature-content p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact-email {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-family: monospace;
+  color: #4f46e5;
+}
+
+.legal-card {
+  text-align: center;
+}
+
+.legal-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legal-links a {
+  color: #4f46e5;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: #e0e7ff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.legal-links a:hover {
+  background: #c7d2fe;
+  transform: translateY(-2px);
+}
+
+/* ==================== Footer ==================== */
+.site-footer {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 40px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+[data-theme="light"] .site-footer {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.footer-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.footer-tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+.footer-divider {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ==================== Legal Pages ==================== */
+.legal-page {
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+.legal-page .container {
+  max-width: 800px;
+}
+
+.legal-page h1 {
+  margin-bottom: 10px;
+}
+
+.last-updated {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.back-link {
+  display: inline-block;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #6366f1;
+}
+
+.legal-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  margin-bottom: 30px;
+}
+
+.legal-content section {
+  margin-bottom: 30px;
+}
+
+.legal-content section:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content h2 {
+  color: #1e293b;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.legal-content h3 {
+  color: #334155;
+  font-size: 1rem;
+  margin: 15px 0 10px;
+}
+
+.legal-content p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.legal-content ul {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.legal-content li {
+  margin-bottom: 8px;
+}
+
+.legal-content a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.legal-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legal-content {
+    padding: 20px;
+  }
+
+  .legal-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .legal-links a {
+    width: 100%;
+  }
+}

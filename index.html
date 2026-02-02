@@ -4,8 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-6158863961903894">
-  <title data-i18n="appTitle">Random Pick</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트를 제공하는 랜덤 픽 서비스입니다. Free lottery number generator, dinner menu picker, and AI animal face test.">
+  <meta name="keywords" content="로또, 번호 생성기, 저녁 메뉴, 메뉴 추천, 동물상 테스트, lottery, random picker, dinner menu, AI test">
+  <meta name="author" content="Random Pick">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Random Pick - 로또 번호 생성기 & 메뉴 추천">
+  <meta property="og:description" content="무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트 서비스">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Random Pick - Lottery & Menu Picker">
+  <meta name="twitter:description" content="Free lottery number generator, dinner menu picker, and AI animal face test">
+
+  <title data-i18n="appTitle">Random Pick - 로또 번호 생성기 & 메뉴 추천</title>
+  <link rel="canonical" href="https://product-builder-lecture-cld.web.app/">
   <link href='/style.css' rel='stylesheet'>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6158863961903894"
      crossorigin="anonymous"></script>
@@ -28,6 +49,10 @@
       <button class="nav-btn" data-page="animal" onclick="showPage('animal')">
         <span class="nav-icon">&#128054;</span>
         <span class="nav-text" data-i18n="navAnimal">Animal</span>
+      </button>
+      <button class="nav-btn" data-page="about" onclick="showPage('about')">
+        <span class="nav-icon">&#9432;</span>
+        <span class="nav-text" data-i18n="navAbout">About</span>
       </button>
     </nav>
     <div class="toolbar-right">
@@ -248,6 +273,85 @@
       </div>
     </div>
   </div>
+
+  <!-- About Page -->
+  <div id="aboutPage" class="page">
+    <div class="container">
+      <h1 data-i18n="aboutHeading">About Random Pick</h1>
+
+      <!-- About Section -->
+      <div class="about-card">
+        <h3 data-i18n="aboutTitle">About Us</h3>
+        <p data-i18n="aboutDescription">
+          Random Pick is a free utility service that provides various random selection tools.
+          We aim to help you make decisions quickly and easily through our lottery number generator,
+          dinner menu picker, and AI-powered animal face test features.
+        </p>
+      </div>
+
+      <!-- Features Section -->
+      <div class="about-card">
+        <h3 data-i18n="featuresTitle">Our Features</h3>
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="feature-icon">&#127922;</span>
+            <div class="feature-content">
+              <h4 data-i18n="feature1Title">Lottery Number Generator</h4>
+              <p data-i18n="feature1Desc">Generate random numbers for Korea Lotto 645, US Mega Millions, and Powerball. Our generator uses a cryptographically secure random algorithm.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">&#127869;</span>
+            <div class="feature-content">
+              <h4 data-i18n="feature2Title">Dinner Menu Picker</h4>
+              <p data-i18n="feature2Desc">Can't decide what to eat? Let us pick a random dinner menu for you! Choose from Korean, Chinese, Japanese, Western, and Asian cuisines.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">&#128054;</span>
+            <div class="feature-content">
+              <h4 data-i18n="feature3Title">AI Animal Face Test</h4>
+              <p data-i18n="feature3Desc">Upload your photo and let our AI determine if you have more dog-like or cat-like features. Fun and entertainment for everyone!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="about-card">
+        <h3 data-i18n="contactUsTitle">Contact Us</h3>
+        <p data-i18n="contactUsDesc">For business inquiries, partnerships, or feedback, please use the contact form on the Dinner page or email us directly.</p>
+        <p class="contact-email">Email: contact@randompick.app</p>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="about-card legal-card">
+        <h3 data-i18n="legalTitle">Legal</h3>
+        <div class="legal-links">
+          <a href="/privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
+          <a href="/terms.html" data-i18n="termsOfService">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <p class="footer-brand">Random Pick</p>
+        <p class="footer-tagline" data-i18n="footerTagline">Your go-to random selection tool</p>
+      </div>
+      <div class="footer-links">
+        <a href="/privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/terms.html" data-i18n="termsOfService">Terms of Service</a>
+        <span class="footer-divider">|</span>
+        <a href="#" onclick="showPage('about'); return false;" data-i18n="navAbout">About</a>
+      </div>
+      <p class="footer-copyright">&copy; 2024 Random Pick. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script defer type="text/javascript" src="/main.js"></script>
 

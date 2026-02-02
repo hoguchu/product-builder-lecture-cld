@@ -47,7 +47,24 @@ const translations = {
     dogFace: '강아지상',
     catFace: '고양이상',
     dogLabel: '강아지',
-    catLabel: '고양이'
+    catLabel: '고양이',
+    navAbout: '소개',
+    aboutHeading: 'Random Pick 소개',
+    aboutTitle: '서비스 소개',
+    aboutDescription: 'Random Pick은 다양한 랜덤 선택 도구를 제공하는 무료 유틸리티 서비스입니다. 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트 기능을 통해 빠르고 쉽게 선택을 도와드립니다.',
+    featuresTitle: '주요 기능',
+    feature1Title: '로또 번호 생성기',
+    feature1Desc: '한국 로또 645, 미국 메가밀리언, 파워볼의 랜덤 번호를 생성합니다. 암호학적으로 안전한 난수 알고리즘을 사용합니다.',
+    feature2Title: '저녁 메뉴 추천',
+    feature2Desc: '무엇을 먹을지 고민될 때! 한식, 중식, 일식, 양식, 아시안 요리 중에서 랜덤으로 메뉴를 추천해드립니다.',
+    feature3Title: 'AI 동물상 테스트',
+    feature3Desc: '사진을 업로드하면 AI가 강아지상인지 고양이상인지 분석해드립니다. 재미로 즐기는 테스트입니다!',
+    contactUsTitle: '문의하기',
+    contactUsDesc: '비즈니스 문의, 제휴, 피드백은 저녁메뉴 페이지의 문의 양식을 이용하시거나 이메일로 연락해주세요.',
+    legalTitle: '법적 고지',
+    privacyPolicy: '개인정보처리방침',
+    termsOfService: '이용약관',
+    footerTagline: '당신의 랜덤 선택 도우미'
   },
   en: {
     appTitle: 'Random Pick',
@@ -96,7 +113,24 @@ const translations = {
     dogFace: 'Dog Face',
     catFace: 'Cat Face',
     dogLabel: 'Dog',
-    catLabel: 'Cat'
+    catLabel: 'Cat',
+    navAbout: 'About',
+    aboutHeading: 'About Random Pick',
+    aboutTitle: 'About Us',
+    aboutDescription: 'Random Pick is a free utility service that provides various random selection tools. We aim to help you make decisions quickly and easily through our lottery number generator, dinner menu picker, and AI-powered animal face test features.',
+    featuresTitle: 'Our Features',
+    feature1Title: 'Lottery Number Generator',
+    feature1Desc: 'Generate random numbers for Korea Lotto 645, US Mega Millions, and Powerball. Our generator uses a cryptographically secure random algorithm.',
+    feature2Title: 'Dinner Menu Picker',
+    feature2Desc: "Can't decide what to eat? Let us pick a random dinner menu for you! Choose from Korean, Chinese, Japanese, Western, and Asian cuisines.",
+    feature3Title: 'AI Animal Face Test',
+    feature3Desc: 'Upload your photo and let our AI determine if you have more dog-like or cat-like features. Fun and entertainment for everyone!',
+    contactUsTitle: 'Contact Us',
+    contactUsDesc: 'For business inquiries, partnerships, or feedback, please use the contact form on the Dinner page or email us directly.',
+    legalTitle: 'Legal',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+    footerTagline: 'Your go-to random selection tool'
   }
 };
 
