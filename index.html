@@ -63,7 +63,7 @@
   <link rel="alternate" type="application/rss+xml" title="Random Pick RSS Feed" href="/rss.xml">
   <link href='/style.css' rel='stylesheet'>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data - GEO Optimized -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,6 +75,8 @@
         "name": "Random Pick",
         "description": "무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트 서비스",
         "inLanguage": ["ko-KR", "en-US"],
+        "datePublished": "2024-01-01",
+        "dateModified": "2026-02-03",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://product-builder-lecture-cld.pages.dev/?s={search_term_string}",
@@ -94,7 +96,10 @@
           "@type": "ContactPoint",
           "email": "contact@randompick.app",
           "contactType": "customer service"
-        }
+        },
+        "sameAs": [
+          "https://github.com/randompick"
+        ]
       },
       {
         "@type": "WebApplication",
@@ -104,6 +109,12 @@
         "url": "https://product-builder-lecture-cld.pages.dev/",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
+        "datePublished": "2024-01-01",
+        "dateModified": "2026-02-03",
+        "author": {
+          "@type": "Organization",
+          "name": "Random Pick Team"
+        },
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -115,6 +126,78 @@
           "Powerball Number Generator",
           "Dinner Menu Random Picker",
           "AI Animal Face Test"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://product-builder-lecture-cld.pages.dev/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "로또 번호 생성기는 어떻게 작동하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Random Pick의 로또 번호 생성기는 암호학적으로 안전한 난수 생성 알고리즘(Cryptographically Secure Random)을 사용합니다. 한국 로또 645(1-45에서 6개), 미국 Mega Millions(1-70에서 5개 + 메가볼 1-25), Powerball(1-69에서 5개 + 파워볼 1-26)을 지원합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "저녁 메뉴 추천은 어떤 음식을 추천해주나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "한식, 중식, 일식, 양식, 아시안 등 5가지 카테고리에서 랜덤으로 메뉴를 추천합니다. 전체 카테고리에서 선택하거나 특정 카테고리만 선택할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AI 동물상 테스트는 정확한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI 동물상 테스트는 TensorFlow.js 기반 머신러닝 모델을 사용하여 얼굴 특징을 분석합니다. 결과는 엔터테인먼트 목적이며, 모든 이미지 처리는 브라우저에서 로컬로 수행되어 서버에 저장되지 않습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Random Pick은 무료인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, Random Pick의 모든 기능(로또 번호 생성, 메뉴 추천, AI 동물상 테스트)은 완전 무료입니다. 회원가입 없이 바로 사용할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "업로드한 사진은 안전한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 완전히 안전합니다. AI 동물상 테스트에서 업로드한 사진은 브라우저 내에서만 처리되며, 서버로 전송되거나 저장되지 않습니다. 분석이 끝나면 이미지는 즉시 삭제됩니다."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://product-builder-lecture-cld.pages.dev/#howto-lottery",
+        "name": "로또 번호 생성하는 방법",
+        "description": "Random Pick에서 로또 번호를 생성하는 단계별 가이드",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "로또 종류 선택",
+            "text": "Lotto 645, Mega Millions, Powerball 중 원하는 로또를 선택합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "번호 생성 클릭",
+            "text": "Generate Numbers 버튼을 클릭하여 랜덤 번호를 생성합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "결과 확인",
+            "text": "생성된 번호가 화면에 표시됩니다. 원하는 만큼 다시 생성할 수 있습니다."
+          }
         ]
       },
       {
@@ -181,6 +264,12 @@
     <div class="container">
       <h1 data-i18n="lotteryHeading">Lottery Number Generator</h1>
 
+      <!-- GEO: Definition Box - AI가 인용하기 쉬운 핵심 정의 -->
+      <div class="definition-box" role="article">
+        <p class="definition-text"><strong>로또 번호 생성기란?</strong> 암호학적으로 안전한 난수 알고리즘을 사용하여 로또 번호를 무작위로 생성하는 무료 온라인 도구입니다. 한국 로또 645, 미국 Mega Millions, Powerball을 지원합니다.</p>
+        <p class="last-updated">Last updated: 2026-02-03</p>
+      </div>
+
       <!-- Korea Lotto 645 -->
       <div class="lottery-card lotto645">
         <div class="lottery-header">
@@ -242,6 +331,32 @@
       <button class="generate-btn all-btn" onclick="generateAll()" data-i18n="generateAll">
         Generate All
       </button>
+
+      <!-- GEO: FAQ Section for AI Citation -->
+      <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+        <h2 class="faq-title">FAQ - 자주 묻는 질문</h2>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Q: 로또 번호 생성기는 어떻게 작동하나요?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>A:</strong> Web Crypto API의 암호학적으로 안전한 난수 생성기(CSPRNG)를 사용합니다. 각 번호는 완전히 독립적이고 예측 불가능하게 생성됩니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Q: 생성된 번호로 당첨될 확률이 높나요?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>A:</strong> 모든 번호 조합의 당첨 확률은 동일합니다. 로또 645의 경우 1등 당첨 확률은 약 1/8,145,060입니다. 이 도구는 공정한 랜덤 번호를 생성하지만, 당첨을 보장하지 않습니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Q: 지원하는 로또 종류는 무엇인가요?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>A:</strong> 한국 로또 645(1-45에서 6개 번호), 미국 Mega Millions(1-70에서 5개 + 메가볼 1-25), Powerball(1-69에서 5개 + 파워볼 1-26)을 지원합니다.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -249,6 +364,12 @@
   <div id="dinnerPage" class="page">
     <div class="container">
       <h1 data-i18n="dinnerHeading">Dinner Menu Picker</h1>
+
+      <!-- GEO: Definition Box -->
+      <div class="definition-box" role="article">
+        <p class="definition-text"><strong>저녁 메뉴 추천이란?</strong> "오늘 뭐 먹지?" 고민을 해결해주는 랜덤 메뉴 선택 도구입니다. 한식, 중식, 일식, 양식, 아시안 5가지 카테고리에서 무작위로 메뉴를 추천받을 수 있습니다.</p>
+        <p class="last-updated">Last updated: 2026-02-03</p>
+      </div>
 
       <!-- Result Display -->
       <div class="dinner-card result-card">
@@ -333,6 +454,26 @@
         <h3 data-i18n="commentsTitle">Comments</h3>
         <div id="disqus_thread"></div>
       </div>
+
+      <!-- GEO: FAQ Section -->
+      <div class="faq-section dinner-card">
+        <h2 class="faq-title">FAQ - 자주 묻는 질문</h2>
+
+        <div class="faq-item">
+          <h3>Q: 어떤 종류의 메뉴를 추천해주나요?</h3>
+          <p><strong>A:</strong> 한식(김치찌개, 비빔밥 등), 중식(짜장면, 탕수육 등), 일식(초밥, 라멘 등), 양식(파스타, 스테이크 등), 아시안(쌀국수, 팟타이 등) 5개 카테고리의 다양한 메뉴를 추천합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q: 특정 카테고리만 선택할 수 있나요?</h3>
+          <p><strong>A:</strong> 네, 카테고리 버튼을 클릭하여 한식, 중식, 일식, 양식, 아시안 중 원하는 카테고리만 선택하거나, '전체'를 선택하여 모든 카테고리에서 추천받을 수 있습니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q: 추천 기록은 저장되나요?</h3>
+          <p><strong>A:</strong> 네, 최근 추천 기록이 화면에 표시되며 브라우저의 로컬 스토리지에 저장됩니다. 기록 삭제 버튼으로 언제든 지울 수 있습니다.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -340,6 +481,12 @@
   <div id="animalPage" class="page">
     <div class="container">
       <h1 data-i18n="animalHeading">Animal Face Test</h1>
+
+      <!-- GEO: Definition Box -->
+      <div class="definition-box" role="article">
+        <p class="definition-text"><strong>AI 동물상 테스트란?</strong> TensorFlow.js 기반 머신러닝 모델이 얼굴 사진을 분석하여 강아지상인지 고양이상인지 판별하는 재미있는 AI 테스트입니다. 모든 분석은 브라우저에서 로컬로 처리되어 개인정보가 안전합니다.</p>
+        <p class="last-updated">Last updated: 2026-02-03</p>
+      </div>
 
       <!-- Result Display -->
       <div class="animal-card result-card">
@@ -380,6 +527,26 @@
       <div class="animal-card description-card">
         <h3 data-i18n="howItWorks">How It Works</h3>
         <p data-i18n="animalDescription">This AI analyzes your photo to determine if you have more dog-like or cat-like features. Upload a clear face photo for best results!</p>
+      </div>
+
+      <!-- GEO: FAQ Section -->
+      <div class="faq-section animal-card">
+        <h2 class="faq-title">FAQ - 자주 묻는 질문</h2>
+
+        <div class="faq-item">
+          <h3>Q: 업로드한 사진은 서버에 저장되나요?</h3>
+          <p><strong>A:</strong> 아니요, 절대 저장되지 않습니다. 모든 이미지 분석은 TensorFlow.js를 통해 브라우저 내에서 로컬로 처리됩니다. 사진은 서버로 전송되지 않으며, 분석 후 즉시 삭제됩니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q: 강아지상과 고양이상은 어떻게 판별하나요?</h3>
+          <p><strong>A:</strong> Teachable Machine으로 학습된 CNN(합성곱 신경망) 모델이 얼굴의 특징(눈 모양, 얼굴 윤곽, 표정 등)을 분석하여 강아지상/고양이상 확률을 계산합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q: 정확한 결과를 얻으려면 어떻게 해야 하나요?</h3>
+          <p><strong>A:</strong> 정면을 바라보는 밝고 선명한 얼굴 사진을 사용하세요. 얼굴이 잘 보이고, 조명이 균일한 사진이 가장 좋은 결과를 제공합니다.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -551,6 +718,12 @@
   <div id="aboutPage" class="page">
     <div class="container">
       <h1 data-i18n="aboutHeading">About Random Pick</h1>
+
+      <!-- GEO: E-E-A-T - Author/Organization Info -->
+      <div class="definition-box" role="article">
+        <p class="definition-text"><strong>Random Pick</strong>은 2024년에 설립된 무료 유틸리티 서비스로, 암호학적으로 안전한 난수 생성 기술을 활용하여 로또 번호 생성, 메뉴 추천, AI 동물상 테스트를 제공합니다.</p>
+        <p class="last-updated">Last updated: 2026-02-03 | Developed by Random Pick Team</p>
+      </div>
 
       <!-- About Section -->
       <div class="about-card">
