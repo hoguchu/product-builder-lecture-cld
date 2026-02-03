@@ -134,7 +134,12 @@ const translations = {
     animalFaq3A: '<strong>A:</strong> 정면을 바라보는 밝고 선명한 얼굴 사진을 사용하세요. 얼굴이 잘 보이고, 조명이 균일한 사진이 가장 좋은 결과를 제공합니다.',
     // About GEO
     aboutDefText: '<strong>Random Pick</strong>은 2024년에 설립된 무료 유틸리티 서비스로, 암호학적으로 안전한 난수 생성 기술을 활용하여 로또 번호 생성, 메뉴 추천, AI 동물상 테스트를 제공합니다.',
-    aboutLastUpdated: '마지막 업데이트: 2026-02-03 | Developed by Random Pick Team'
+    aboutLastUpdated: '마지막 업데이트: 2026-02-03 | Developed by Random Pick Team',
+    // Share translations
+    shareTitle: '친구들과 공유하기',
+    shareKakao: '카카오톡',
+    shareCopy: '복사',
+    shareResultPrompt: '친구들에게 결과를 공유해보세요!'
   },
   en: {
     appTitle: 'Random Pick',
@@ -270,7 +275,12 @@ const translations = {
     animalFaq3A: '<strong>A:</strong> Use a bright, clear photo looking straight at the camera. Photos with visible face and even lighting provide the best results.',
     // About GEO
     aboutDefText: '<strong>Random Pick</strong> is a free utility service established in 2024, providing lottery number generation, menu recommendations, and AI animal face test using cryptographically secure random number generation technology.',
-    aboutLastUpdated: 'Last updated: 2026-02-03 | Developed by Random Pick Team'
+    aboutLastUpdated: 'Last updated: 2026-02-03 | Developed by Random Pick Team',
+    // Share translations
+    shareTitle: 'Share Your Numbers',
+    shareKakao: 'KakaoTalk',
+    shareCopy: 'Copy',
+    shareResultPrompt: 'Share your result with friends!'
   }
 };
 
@@ -560,6 +570,11 @@ function pickDinner() {
   resultText.textContent = currentLang === 'ko' ? picked.ko : picked.en;
   resultText.classList.add('picked');
 
+  // Save for sharing and show share buttons
+  lastPickedDinner = picked;
+  const shareSection = document.getElementById('dinnerShare');
+  if (shareSection) shareSection.style.display = 'block';
+
   // Add to history
   addToHistory(picked);
 }
@@ -753,6 +768,15 @@ function displayAnimalResult(dogProb, catProb) {
       <span class="prob-value">${catPercent}%</span>
     </div>
   `;
+
+  // Save result for sharing and show share buttons
+  lastAnimalResult = {
+    type: resultLabel,
+    icon: isDog ? '🐶' : '🐱',
+    percentage: `${isDog ? dogPercent : catPercent}%`
+  };
+  const shareSection = document.getElementById('animalShare');
+  if (shareSection) shareSection.style.display = 'block';
 }
 
 function resetAnimalTest() {
@@ -779,6 +803,11 @@ function resetAnimalTest() {
 
   uploadedImage = null;
   document.getElementById('imageInput').value = '';
+
+  // Hide share buttons and reset result
+  lastAnimalResult = null;
+  const shareSection = document.getElementById('animalShare');
+  if (shareSection) shareSection.style.display = 'none';
 }
 
 // ==================== Blog Data ====================
@@ -2134,7 +2163,175 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ==================== SNS Share Functions ====================
+const SITE_URL = 'https://product-builder-lecture-cld.pages.dev/';
+const KAKAO_APP_KEY = ''; // Add your Kakao JavaScript key here
+
+// Initialize Kakao SDK
+function initKakao() {
+  if (typeof Kakao !== 'undefined' && !Kakao.isInitialized() && KAKAO_APP_KEY) {
+    Kakao.init(KAKAO_APP_KEY);
+  }
+}
+
+// Toast notification
+function showToast(message) {
+  let toast = document.querySelector('.toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// Get lottery numbers as text
+function getLotteryNumbers() {
+  const lotto645 = Array.from(document.querySelectorAll('#lotto645Numbers .ball'))
+    .map(b => b.textContent).filter(n => n !== '?').join(', ');
+  const mega = Array.from(document.querySelectorAll('#megaNumbers .ball'))
+    .map(b => b.textContent).filter(n => n !== '?').join(', ');
+  const power = Array.from(document.querySelectorAll('#powerballNumbers .ball'))
+    .map(b => b.textContent).filter(n => n !== '?').join(', ');
+
+  let text = '';
+  if (lotto645) text += `🎱 Lotto 645: ${lotto645}\n`;
+  if (mega) text += `💰 Mega Millions: ${mega}\n`;
+  if (power) text += `⚡ Powerball: ${power}\n`;
+  return text || (currentLang === 'ko' ? '번호를 먼저 생성해주세요!' : 'Generate numbers first!');
+}
+
+// Lottery Share Functions
+function shareLotteryKakao() {
+  const numbers = getLotteryNumbers();
+  if (numbers.includes('Generate') || numbers.includes('생성')) {
+    showToast(currentLang === 'ko' ? '번호를 먼저 생성해주세요!' : 'Generate numbers first!');
+    return;
+  }
+
+  if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+    Kakao.Share.sendDefault({
+      objectType: 'text',
+      text: `🍀 ${currentLang === 'ko' ? '오늘의 행운 번호!' : 'My Lucky Numbers!'}\n\n${numbers}\n${currentLang === 'ko' ? '나도 번호 뽑아보기 👉' : 'Get yours 👉'}`,
+      link: {
+        mobileWebUrl: SITE_URL,
+        webUrl: SITE_URL
+      }
+    });
+  } else {
+    showToast(currentLang === 'ko' ? '카카오톡 공유가 준비되지 않았습니다' : 'KakaoTalk sharing not ready');
+  }
+}
+
+function shareLotteryTwitter() {
+  const numbers = getLotteryNumbers();
+  if (numbers.includes('Generate') || numbers.includes('생성')) {
+    showToast(currentLang === 'ko' ? '번호를 먼저 생성해주세요!' : 'Generate numbers first!');
+    return;
+  }
+  const text = encodeURIComponent(`🍀 ${currentLang === 'ko' ? '오늘의 행운 번호!' : 'My Lucky Numbers!'}\n\n${numbers}\n\n#로또 #RandomPick`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(SITE_URL)}`, '_blank', 'width=600,height=400');
+}
+
+function shareLotteryFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL)}`, '_blank', 'width=600,height=400');
+}
+
+function shareLotteryCopy() {
+  const numbers = getLotteryNumbers();
+  if (numbers.includes('Generate') || numbers.includes('생성')) {
+    showToast(currentLang === 'ko' ? '번호를 먼저 생성해주세요!' : 'Generate numbers first!');
+    return;
+  }
+  const text = `🍀 ${currentLang === 'ko' ? '오늘의 행운 번호!' : 'My Lucky Numbers!'}\n\n${numbers}\n\n${SITE_URL}`;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(currentLang === 'ko' ? '복사되었습니다!' : 'Copied!');
+  });
+}
+
+// Dinner Share Functions
+let lastPickedDinner = null;
+
+function shareDinnerKakao() {
+  if (!lastPickedDinner) return;
+  const menuName = currentLang === 'ko' ? lastPickedDinner.ko : lastPickedDinner.en;
+
+  if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+    Kakao.Share.sendDefault({
+      objectType: 'text',
+      text: `🍽️ ${currentLang === 'ko' ? '오늘 저녁은' : "Tonight's dinner is"} "${menuName}"!\n\n${currentLang === 'ko' ? '나도 메뉴 추천받기 👉' : 'Get your recommendation 👉'}`,
+      link: {
+        mobileWebUrl: SITE_URL + '#dinner',
+        webUrl: SITE_URL + '#dinner'
+      }
+    });
+  } else {
+    showToast(currentLang === 'ko' ? '카카오톡 공유가 준비되지 않았습니다' : 'KakaoTalk sharing not ready');
+  }
+}
+
+function shareDinnerTwitter() {
+  if (!lastPickedDinner) return;
+  const menuName = currentLang === 'ko' ? lastPickedDinner.ko : lastPickedDinner.en;
+  const text = encodeURIComponent(`🍽️ ${currentLang === 'ko' ? '오늘 저녁은' : "Tonight's dinner is"} "${menuName}"!\n\n#저녁메뉴 #RandomPick`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(SITE_URL)}`, '_blank', 'width=600,height=400');
+}
+
+function shareDinnerFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL + '#dinner')}`, '_blank', 'width=600,height=400');
+}
+
+function shareDinnerCopy() {
+  if (!lastPickedDinner) return;
+  const menuName = currentLang === 'ko' ? lastPickedDinner.ko : lastPickedDinner.en;
+  const text = `🍽️ ${currentLang === 'ko' ? '오늘 저녁은' : "Tonight's dinner is"} "${menuName}"!\n\n${SITE_URL}`;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(currentLang === 'ko' ? '복사되었습니다!' : 'Copied!');
+  });
+}
+
+// Animal Share Functions
+let lastAnimalResult = null;
+
+function shareAnimalKakao() {
+  if (!lastAnimalResult) return;
+
+  if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+    Kakao.Share.sendDefault({
+      objectType: 'text',
+      text: `${lastAnimalResult.icon} ${currentLang === 'ko' ? '내 동물상은' : 'My animal face is'} "${lastAnimalResult.type}"! (${lastAnimalResult.percentage})\n\n${currentLang === 'ko' ? '나도 테스트하기 👉' : 'Try it yourself 👉'}`,
+      link: {
+        mobileWebUrl: SITE_URL + '#animal',
+        webUrl: SITE_URL + '#animal'
+      }
+    });
+  } else {
+    showToast(currentLang === 'ko' ? '카카오톡 공유가 준비되지 않았습니다' : 'KakaoTalk sharing not ready');
+  }
+}
+
+function shareAnimalTwitter() {
+  if (!lastAnimalResult) return;
+  const text = encodeURIComponent(`${lastAnimalResult.icon} ${currentLang === 'ko' ? '내 동물상은' : 'My animal face is'} "${lastAnimalResult.type}"! (${lastAnimalResult.percentage})\n\n#동물상테스트 #RandomPick`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(SITE_URL)}`, '_blank', 'width=600,height=400');
+}
+
+function shareAnimalFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL + '#animal')}`, '_blank', 'width=600,height=400');
+}
+
+function shareAnimalCopy() {
+  if (!lastAnimalResult) return;
+  const text = `${lastAnimalResult.icon} ${currentLang === 'ko' ? '내 동물상은' : 'My animal face is'} "${lastAnimalResult.type}"! (${lastAnimalResult.percentage})\n\n${SITE_URL}`;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(currentLang === 'ko' ? '복사되었습니다!' : 'Copied!');
+  });
+}
+
 // ==================== Initialize ====================
 initTheme();
 initLanguage();
 loadHistory();
+initKakao();
