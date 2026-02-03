@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="url(#accent)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="200" fill="url(#accent)" opacity="0.1"/>
+  
+  <!-- Logo/Icon area -->
+  <rect x="500" y="120" width="200" height="200" rx="40" fill="url(#accent)"/>
+  <circle cx="540" cy="160" r="15" fill="white"/>
+  <circle cx="600" cy="220" r="15" fill="white"/>
+  <circle cx="660" cy="280" r="15" fill="white"/>
+  <circle cx="660" cy="160" r="15" fill="white"/>
+  <circle cx="540" cy="280" r="15" fill="white"/>
+  
+  <!-- Title -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">Random Pick</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="470" font-family="Arial, sans-serif" font-size="32" fill="#a5b4fc" text-anchor="middle">로또 번호 생성기 | 메뉴 추천 | AI 동물상 테스트</text>
+  
+  <!-- URL -->
+  <text x="600" y="560" font-family="Arial, sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">product-builder-lecture-cld.web.app</text>
+</svg>
