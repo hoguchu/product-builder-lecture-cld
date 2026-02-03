@@ -104,7 +104,37 @@ const translations = {
     blog11Title: 'AI 학습 리소스',
     blog11Summary: 'AI 학습을 시작하는 초보자를 위한 최고의 강좌, 책, 리소스',
     blog12Title: '2024년 AI 트렌드',
-    blog12Summary: '인공지능의 미래를 형성하는 핵심 기술과 발전'
+    blog12Summary: '인공지능의 미래를 형성하는 핵심 기술과 발전',
+    // GEO Content translations
+    lastUpdated: '마지막 업데이트: 2026-02-03',
+    faqTitle: 'FAQ - 자주 묻는 질문',
+    // Lottery GEO
+    lotteryDefText: '<strong>로또 번호 생성기란?</strong> 암호학적으로 안전한 난수 알고리즘을 사용하여 로또 번호를 무작위로 생성하는 무료 온라인 도구입니다. 한국 로또 645, 미국 Mega Millions, Powerball을 지원합니다.',
+    lotteryFaq1Q: 'Q: 로또 번호 생성기는 어떻게 작동하나요?',
+    lotteryFaq1A: '<strong>A:</strong> Web Crypto API의 암호학적으로 안전한 난수 생성기(CSPRNG)를 사용합니다. 각 번호는 완전히 독립적이고 예측 불가능하게 생성됩니다.',
+    lotteryFaq2Q: 'Q: 생성된 번호로 당첨될 확률이 높나요?',
+    lotteryFaq2A: '<strong>A:</strong> 모든 번호 조합의 당첨 확률은 동일합니다. 로또 645의 경우 1등 당첨 확률은 약 1/8,145,060입니다. 이 도구는 공정한 랜덤 번호를 생성하지만, 당첨을 보장하지 않습니다.',
+    lotteryFaq3Q: 'Q: 지원하는 로또 종류는 무엇인가요?',
+    lotteryFaq3A: '<strong>A:</strong> 한국 로또 645(1-45에서 6개 번호), 미국 Mega Millions(1-70에서 5개 + 메가볼 1-25), Powerball(1-69에서 5개 + 파워볼 1-26)을 지원합니다.',
+    // Dinner GEO
+    dinnerDefText: '<strong>저녁 메뉴 추천이란?</strong> "오늘 뭐 먹지?" 고민을 해결해주는 랜덤 메뉴 선택 도구입니다. 한식, 중식, 일식, 양식, 아시안 5가지 카테고리에서 무작위로 메뉴를 추천받을 수 있습니다.',
+    dinnerFaq1Q: 'Q: 어떤 종류의 메뉴를 추천해주나요?',
+    dinnerFaq1A: '<strong>A:</strong> 한식(김치찌개, 비빔밥 등), 중식(짜장면, 탕수육 등), 일식(초밥, 라멘 등), 양식(파스타, 스테이크 등), 아시안(쌀국수, 팟타이 등) 5개 카테고리의 다양한 메뉴를 추천합니다.',
+    dinnerFaq2Q: 'Q: 특정 카테고리만 선택할 수 있나요?',
+    dinnerFaq2A: '<strong>A:</strong> 네, 카테고리 버튼을 클릭하여 한식, 중식, 일식, 양식, 아시안 중 원하는 카테고리만 선택하거나, \'전체\'를 선택하여 모든 카테고리에서 추천받을 수 있습니다.',
+    dinnerFaq3Q: 'Q: 추천 기록은 저장되나요?',
+    dinnerFaq3A: '<strong>A:</strong> 네, 최근 추천 기록이 화면에 표시되며 브라우저의 로컬 스토리지에 저장됩니다. 기록 삭제 버튼으로 언제든 지울 수 있습니다.',
+    // Animal GEO
+    animalDefText: '<strong>AI 동물상 테스트란?</strong> TensorFlow.js 기반 머신러닝 모델이 얼굴 사진을 분석하여 강아지상인지 고양이상인지 판별하는 재미있는 AI 테스트입니다. 모든 분석은 브라우저에서 로컬로 처리되어 개인정보가 안전합니다.',
+    animalFaq1Q: 'Q: 업로드한 사진은 서버에 저장되나요?',
+    animalFaq1A: '<strong>A:</strong> 아니요, 절대 저장되지 않습니다. 모든 이미지 분석은 TensorFlow.js를 통해 브라우저 내에서 로컬로 처리됩니다. 사진은 서버로 전송되지 않으며, 분석 후 즉시 삭제됩니다.',
+    animalFaq2Q: 'Q: 강아지상과 고양이상은 어떻게 판별하나요?',
+    animalFaq2A: '<strong>A:</strong> Teachable Machine으로 학습된 CNN(합성곱 신경망) 모델이 얼굴의 특징(눈 모양, 얼굴 윤곽, 표정 등)을 분석하여 강아지상/고양이상 확률을 계산합니다.',
+    animalFaq3Q: 'Q: 정확한 결과를 얻으려면 어떻게 해야 하나요?',
+    animalFaq3A: '<strong>A:</strong> 정면을 바라보는 밝고 선명한 얼굴 사진을 사용하세요. 얼굴이 잘 보이고, 조명이 균일한 사진이 가장 좋은 결과를 제공합니다.',
+    // About GEO
+    aboutDefText: '<strong>Random Pick</strong>은 2024년에 설립된 무료 유틸리티 서비스로, 암호학적으로 안전한 난수 생성 기술을 활용하여 로또 번호 생성, 메뉴 추천, AI 동물상 테스트를 제공합니다.',
+    aboutLastUpdated: '마지막 업데이트: 2026-02-03 | Developed by Random Pick Team'
   },
   en: {
     appTitle: 'Random Pick',
@@ -210,7 +240,37 @@ const translations = {
     blog11Title: 'AI Learning Resources',
     blog11Summary: 'Best courses, books, and resources for beginners to start learning AI.',
     blog12Title: 'AI Trends in 2024',
-    blog12Summary: 'Key technologies and developments shaping the future of artificial intelligence.'
+    blog12Summary: 'Key technologies and developments shaping the future of artificial intelligence.',
+    // GEO Content translations
+    lastUpdated: 'Last updated: 2026-02-03',
+    faqTitle: 'FAQ - Frequently Asked Questions',
+    // Lottery GEO
+    lotteryDefText: '<strong>What is Lottery Number Generator?</strong> A free online tool that generates random lottery numbers using cryptographically secure algorithms. Supports Korea Lotto 645, US Mega Millions, and Powerball.',
+    lotteryFaq1Q: 'Q: How does the lottery number generator work?',
+    lotteryFaq1A: '<strong>A:</strong> It uses the Web Crypto API\'s cryptographically secure random number generator (CSPRNG). Each number is generated completely independently and unpredictably.',
+    lotteryFaq2Q: 'Q: Are the generated numbers more likely to win?',
+    lotteryFaq2A: '<strong>A:</strong> All number combinations have equal probability of winning. For Lotto 645, the first prize odds are about 1/8,145,060. This tool generates fair random numbers but does not guarantee winning.',
+    lotteryFaq3Q: 'Q: What lottery types are supported?',
+    lotteryFaq3A: '<strong>A:</strong> Korea Lotto 645 (6 numbers from 1-45), US Mega Millions (5 numbers from 1-70 + Mega Ball 1-25), and Powerball (5 numbers from 1-69 + Powerball 1-26).',
+    // Dinner GEO
+    dinnerDefText: '<strong>What is Dinner Menu Picker?</strong> A random menu selection tool that solves the "What should I eat today?" dilemma. Get random recommendations from 5 categories: Korean, Chinese, Japanese, Western, and Asian cuisine.',
+    dinnerFaq1Q: 'Q: What types of menus are recommended?',
+    dinnerFaq1A: '<strong>A:</strong> We recommend various menus from 5 categories: Korean (Kimchi Stew, Bibimbap, etc.), Chinese (Jajangmyeon, Sweet and Sour Pork, etc.), Japanese (Sushi, Ramen, etc.), Western (Pasta, Steak, etc.), and Asian (Pho, Pad Thai, etc.).',
+    dinnerFaq2Q: 'Q: Can I select specific categories only?',
+    dinnerFaq2A: '<strong>A:</strong> Yes, click the category buttons to select Korean, Chinese, Japanese, Western, or Asian only, or select \'All\' to get recommendations from all categories.',
+    dinnerFaq3Q: 'Q: Are recommendation records saved?',
+    dinnerFaq3A: '<strong>A:</strong> Yes, recent recommendation records are displayed on screen and saved in your browser\'s local storage. You can delete them anytime with the Clear History button.',
+    // Animal GEO
+    animalDefText: '<strong>What is AI Animal Face Test?</strong> A fun AI test using TensorFlow.js-based machine learning model that analyzes your face photo to determine if you have more dog-like or cat-like features. All analysis is processed locally in your browser, keeping your privacy safe.',
+    animalFaq1Q: 'Q: Are uploaded photos stored on the server?',
+    animalFaq1A: '<strong>A:</strong> No, absolutely not. All image analysis is processed locally in your browser through TensorFlow.js. Photos are never sent to a server and are deleted immediately after analysis.',
+    animalFaq2Q: 'Q: How is dog-face vs cat-face determined?',
+    animalFaq2A: '<strong>A:</strong> A CNN (Convolutional Neural Network) model trained with Teachable Machine analyzes facial features (eye shape, face contour, expression, etc.) to calculate the probability of dog-like or cat-like features.',
+    animalFaq3Q: 'Q: How can I get accurate results?',
+    animalFaq3A: '<strong>A:</strong> Use a bright, clear photo looking straight at the camera. Photos with visible face and even lighting provide the best results.',
+    // About GEO
+    aboutDefText: '<strong>Random Pick</strong> is a free utility service established in 2024, providing lottery number generation, menu recommendations, and AI animal face test using cryptographically secure random number generation technology.',
+    aboutLastUpdated: 'Last updated: 2026-02-03 | Developed by Random Pick Team'
   }
 };
 
@@ -329,7 +389,13 @@ function applyLanguage() {
       if (el.tagName === 'TITLE') {
         document.title = translations[currentLang][key];
       } else {
-        el.textContent = translations[currentLang][key];
+        // Use innerHTML for content with HTML tags, textContent otherwise
+        const content = translations[currentLang][key];
+        if (content.includes('<strong>') || content.includes('<')) {
+          el.innerHTML = content;
+        } else {
+          el.textContent = content;
+        }
       }
     }
   });
