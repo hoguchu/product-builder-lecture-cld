@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random Pick - AI Insights Blog</title>
-    <link>https://product-builder-lecture-cld.web.app/</link>
+    <link>https://product-builder-lecture-cld.pages.dev/</link>
     <description>무료 로또 번호 생성기, 저녁 메뉴 추천, AI 동물상 테스트, AI 인사이트 블로그를 제공하는 랜덤 픽 서비스입니다.</description>
     <language>ko</language>
     <lastBuildDate>Sun, 03 Feb 2024 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://product-builder-lecture-cld.web.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://product-builder-lecture-cld.pages.dev/rss.xml" rel="self" type="application/rss+xml"/>
     
     <item>
       <title>What is Artificial Intelligence?</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>A comprehensive introduction to AI, its history, and how it works in simple terms.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-1</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-1</guid>
     </item>
     
     <item>
       <title>Machine Learning vs Deep Learning</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>Understanding the key differences between these two fundamental AI concepts.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-2</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-2</guid>
     </item>
     
     <item>
       <title>ChatGPT and Conversational AI</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>How large language models are revolutionizing human-computer interaction.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-3</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-3</guid>
     </item>
     
     <item>
       <title>AI in Daily Life</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>Discover how AI is already integrated into your everyday activities and devices.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-4</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-4</guid>
     </item>
     
     <item>
       <title>AI Image Generation Tools</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>Compare DALL-E, Midjourney, and Stable Diffusion for creating stunning visuals.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-5</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-5</guid>
     </item>
     
     <item>
       <title>AI Ethics and Responsibility</title>
-      <link>https://product-builder-lecture-cld.web.app/#blog</link>
+      <link>https://product-builder-lecture-cld.pages.dev/#blog</link>
       <description>Important considerations for the ethical development and use of AI systems.</description>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate>
-      <guid>https://product-builder-lecture-cld.web.app/#blog-6</guid>
+      <guid>https://product-builder-lecture-cld.pages.dev/#blog-6</guid>
     </item>
   </channel>
 </rss>

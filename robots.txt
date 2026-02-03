@@ -1,11 +1,11 @@
 # Random Pick - robots.txt
-# https://product-builder-lecture-cld.web.app/
+# https://product-builder-lecture-cld.pages.dev/
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://product-builder-lecture-cld.web.app/sitemap.xml
+Sitemap: https://product-builder-lecture-cld.pages.dev/sitemap.xml
 
 # Crawl-delay for politeness (optional)
 Crawl-delay: 1
